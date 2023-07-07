@@ -1,5 +1,13 @@
 package http.base.authz
 
+test_listbucket_cygno_allowed {
+  allow with input as {
+                        "account": "cygnodm",
+                        "bucket": "cygnus",
+                        "action": "s3:ListBucket"
+                      }
+}
+
 test_post_cygnus_allowed {
   allow with input as { "claims": { "preferred_username": "stalio",
                                     "groups": ["cygno-users"],
